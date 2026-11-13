@@ -251,8 +251,8 @@
       <p>OTP will be sent to <span id="displayPhone">+91 XXXXXXXX</span></p>
       
       <div class="otp-input-group">
-        <!-- Maxlength 4 kar diya gaya hai -->
-        <input type="tel" id="otpInput" placeholder="Enter 4-digit OTP" maxlength="4" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,4)">
+        <!-- Placeholder sirf "Enter OTP" kar diya gaya hai -->
+        <input type="tel" id="otpInput" placeholder="Enter OTP" maxlength="4" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,4)">
         <button id="sendOtpBtn" onclick="sendOTP()">Send</button>
       </div>
       
@@ -343,7 +343,6 @@
       const btn = document.getElementById('confirmBtn');
 
       if (!otp) { showToast('Please enter OTP!', true); return; }
-      // 4 digits validation check
       if (otp.length !== 4) { showToast('OTP must be 4 digits!', true); return; }
 
       isProcessing = true;
